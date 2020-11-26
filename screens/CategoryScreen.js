@@ -4,7 +4,7 @@ import {View, Text } from 'react-native';
 const CategoriesScreen = props => {
     return (
         <View>
-            <Text style={styles.screen}>The Categories Screen!</Text>
+            <Text style={styles.screen}>The Category Screen!</Text>
         </View>
     )
 };
