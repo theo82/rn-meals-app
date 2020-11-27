@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text } from 'react-native';
+import {View, Text, StyleSheet } from 'react-native';
 
 const FiltersScreen = props => {
     return (
-        <View>
-            <Text style={styles.screen}>The Filtered Meals Screen!</Text>
+        <View style={styles.screen}>
+            <Text>The Filtered Meals Screen!</Text>
         </View>
     )
 };

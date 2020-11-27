@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text } from 'react-native';
+import {View, Text, StyleSheet } from 'react-native';
 
 const CategoryMeal = props => {
     return (
-        <View>
-            <Text style={styles.screen}>The Category Meals Screen!</Text>
+        <View style={styles.screen}>
+            <Text>The Category Meals Screen!</Text>
         </View>
     )
 };
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         justifyContent: 'center',
-        alignItems = 'center'
+        alignItems: 'center'
     }
 })
 
