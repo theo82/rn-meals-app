@@ -8,6 +8,10 @@ const CategoryMeal = props => {
             <Button title="Go to Details" onPress={() => {
                 props.navigation.navigate({routeName: 'MealDetail'})
             }}></Button>
+            <Button title="Go Back" onPress={() => {
+                // props.navigation.goBack();
+                props.navigation.pop();
+            }}></Button>
         </View>
 
     )
