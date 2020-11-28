@@ -1,8 +1,11 @@
 import React from 'react';
 import {View, Button, Text, StyleSheet } from 'react-native';
+import { HeaderTitle } from 'react-navigation-stack';
 import { CATEGORIES} from '../data/dummy-data';
+import CategoriesScreen from './CategoriesScreen';
+import Colors from '../constants/Colors';
 
-const CategoryMeal = props => {
+const CategoryMealScreen = props => {
     const catId = props.navigation.getParam('categoryId');
     const selectCategory = CATEGORIES.find(cat => cat.id ===catId)
     return (
@@ -21,6 +24,19 @@ const CategoryMeal = props => {
     )
 };
 
+CategoryMealScreen.navigationOptions = (navigatioData) => {
+    const catId = navigatioData.navigation.getParam('categoryId');
+    const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
+
+    return {
+        headerTitle: selectedCategory.title,
+        headerStyle: {
+            backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
+        },
+        headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor
+    }
+}
+
 const styles = StyleSheet.create({
     screen: {
         flex: 1,
@@ -29,4 +45,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CategoryMeal;
+export default CategoryMealScreen;
