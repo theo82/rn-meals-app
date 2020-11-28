@@ -9,13 +9,13 @@ import {View,
 
 
 import { CATEGORIES } from '../data/dummy-data';
-import CategoryGridTitle from '../components/CategoryGridTitle';
+import CategoryGridTile from '../components/CategoryGridTile';
 
 const CategoriesScreen = props => {
 
     const renderGridItem = (itemData) => {
         return (
-            <CategoryGridTitle 
+            <CategoryGridTile 
                 title ={itemData.item.title} 
                 color={itemData.item.color}
                 onSelect={() => {
