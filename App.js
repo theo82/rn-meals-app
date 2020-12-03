@@ -1,12 +1,22 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
-
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 import { AppLoading } from 'expo';
 
 import MealsNavigator from './navigation/MealsNavigator';
-import {enableScreens} from 'react-native-screens'
+import { enableScreens } from 'react-native-screens'
+import mealsReducers from './store/reducers/meals';
 
 enableScreens();
+
+const rootReducer = combineReducers({
+  meals: mealsReducers
+});
+
+const store = createStore(
+  rootReducer
+);
 
 export default function App() {
 
@@ -23,5 +33,9 @@ export default function App() {
 
   console.log(fontsLoaded);
 
-  return <MealsNavigator />
+  return (
+    <Provider store={store}>
+      <MealsNavigator />
+    </Provider>
+  )
 }
